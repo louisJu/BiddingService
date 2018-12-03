@@ -32,7 +32,7 @@ $ export FABRIC_VERSION=hlfv11
 $ ./downloadFabric.sh
 ```
 
-##4. Start Fabric
+## 4. Start Fabric
 ```
 $ cd ~/fabric-dev-servers
 $ export FABRIC_VERSION=hlfv11
@@ -40,24 +40,24 @@ $ ./startFabric.sh
 $ ./createPeerAdminCard.sh
 ```
 
-##5. Start Playground
+## 5. Start Playground
 ```
 $ composer-playground
 ```
 * http://localhost:8080/login
 
 
-##6. Create Business Network Structure
+## 6. Create Business Network Structure
 ```
 $ yo hyperledger-composer:businessnetwork
 ```
 
-##7. Generate Business Network Archive
+## 7. Generate Business Network Archive
 ```
 composer archive create -t dir -n .
 ```
 
-##8. Deploying Business Network
+## 8. Deploying Business Network
 ```
 $ composer network install --card PeerAdmin@hlfv1 --archiveFile bidding-service@0.0.1.bna
 $ composer network start --card PeerAdmin@hlfv1 --networkName bidding-service --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw
@@ -65,12 +65,12 @@ $ composer card import --file admin@bidding-service.card
 $ composer network ping --card admin@bidding-service (check ok)
 ```
 
-##9. Start Rest API Server
+## 9. Start Rest API Server
 ```
 $ composer-rest-server
 ```
 
-##10. Start Angular Application
+## 10. Start Angular Application
 ```
 $ cd bidding-service
 $ yo hyperledger-composer:angular
@@ -78,7 +78,7 @@ $ cd angular-bidding-service
 $ npm start
 ```
 
-##11. Upgrade Business Network Archive
+## 11. Upgrade Business Network Archive
 ```
 $ vi package.json
   5   "name": "bidding-service",
@@ -88,3 +88,7 @@ $ composer network install --card PeerAdmin@hlfv1 --archiveFile bidding-service@
 $ composer network upgrade --card PeerAdmin@hlfv1 --networkName bidding-service --networkVersion 0.0.2
 
 ```
+
+## More Info
+* https://hyperledger.github.io/composer/latest/tutorials/tutorials.html
+* https://github.com/IBM/BlockchainNetwork-CompositeJourney
